@@ -14,6 +14,11 @@ public class Biblioteca {
 
     //constructor
     public Biblioteca(Libro[] libros) {
+        setLibros(libros);
+    }
+
+    //setters
+    public void setLibros(Libro[] libros) {
         this.libros = libros;
     }
 
@@ -23,9 +28,8 @@ public class Biblioteca {
     }
 
     //metodos
-
     public void prestarLibro(String titulo) {
-        for (Libro libro : libros) {
+        for (Libro libro : this.libros) {
             if (libro.getTitulo().equals(titulo)) {
                 libro.prestar();
                 return;
@@ -33,20 +37,31 @@ public class Biblioteca {
         }
         System.out.println("El libro " + titulo + " no está disponible en la biblioteca.");
     }
-    
-    public void buscarLibro(String titulo) {
-        for (Libro libro : libros) {
+
+    public boolean buscarLibro(String titulo) {
+        for (Libro libro : this.libros) {
             if (libro.getTitulo().equals(titulo)) {
-                //System.out.println("El libro " + libro.getTitulo() + " está disponible en la biblioteca.");
-                prestarLibro(titulo);
+                System.out.println("El libro " + libro.getTitulo() + " está disponible en la biblioteca.");
+                return true;
+            }
+        }
+        System.out.println("El libro " + titulo + " no está disponible en la biblioteca.");
+        return false;
+    }
+    
+    public void devolverLibro(String titulo){
+        for (Libro libro : this.libros){
+            if (libro.getTitulo().equals(titulo)) {
+                System.out.println("Libro devuelto");
+                libro.devolver();
                 return;
             }
         }
         System.out.println("El libro " + titulo + " no está disponible en la biblioteca.");
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String inventario = "\nBiblioteca{  ListadoLibros: \n";
         for (Libro libro : libros) {
             inventario += libro.toString() + "\n";
