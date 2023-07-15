@@ -23,14 +23,31 @@ public class Main {
         //verificamos que la biblioteca esté creada
         System.out.println(biblioteca.toString());
         
+        
+        //pedir libro
+        /*
         String libro;
         
         Scanner lectura = new Scanner(System.in);
         
-        System.out.println("¿Que libro desea pedir?");
+        System.out.println("¿Que libro desea PEDIR?");
         libro = lectura.nextLine();
         
-        biblioteca.buscarLibro(libro);
+        biblioteca.prestarLibro(libro);
+        
+        //volvemos a verificar la biblioteca para ver si se descontó el ejemplar
+        System.out.println(biblioteca.toString());
+        */
+        
+        //devolver libro
+        String libro;
+        
+        Scanner lectura = new Scanner(System.in);
+        
+        System.out.println("¿Que libro desea DEVOLVER?");
+        libro = lectura.nextLine();
+        
+        biblioteca.devolverLibro(libro);
         
         //volvemos a verificar la biblioteca para ver si se descontó el ejemplar
         System.out.println(biblioteca.toString());
