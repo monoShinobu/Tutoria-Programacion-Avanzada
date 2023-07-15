@@ -16,9 +16,22 @@ public class Libro {
 
     //constructor
     public Libro(String titulo, String autor, int cantidadEjemplares) {
+        setTitulo(titulo);
+        setAutor(autor);
+        setCantidadEjemplares(cantidadEjemplares);
+    }
+    
+    //setters
+    public void setTitulo(String titulo){
         this.titulo = titulo;
+    }
+    
+    public void setAutor(String autor){
         this.autor = autor;
-        this.cantidadEjemplares = cantidadEjemplares;
+    }
+    
+    public void setCantidadEjemplares(int cantidadEje){
+        this.cantidadEjemplares = cantidadEje;
     }
 
     //getters
@@ -57,5 +70,6 @@ public class Libro {
                 ", cantidad " + getCantidadEjemplares() +
                 "}";
     }
+    
     
 }
