@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         //agregamos la universidad
-        Universidad universidad = new Universidad("Andres Bello");
+        Universidad universidad = new Universidad("Santa maria");
         
         //agregamos las facultades
         Facultad[] facul =  new Facultad[2];
