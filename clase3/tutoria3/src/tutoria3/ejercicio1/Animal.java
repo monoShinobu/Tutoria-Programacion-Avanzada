@@ -10,12 +10,19 @@ package tutoria3.ejercicio1;
  */
 public class Animal {
 
-    private int codigo;
-    private int cantidad;
+    protected int codigo;
+    protected int cantidad;
+    protected String nombre;
+    protected String sonido;
 
-    public Animal(int codigo, int cantidad) {
+    public Animal(int codigo, int cantidad, String nombre) {
         setCodigo(codigo);
         setCantidad(cantidad);
+        setNombre(nombre);
+    }
+    
+    public void setSonido( String sonido){
+        this.sonido = sonido;
     }
 
     public void setCodigo(int codigo) {
@@ -25,6 +32,10 @@ public class Animal {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public int getCodigo() {
         return this.codigo;
@@ -33,30 +44,20 @@ public class Animal {
     public int getCantidad() {
         return this.cantidad;
     }
-
-    public void agregarAnimales(int cantidad) {
-        if (verificarCantidad(cantidad)) {
-            this.cantidad = cantidad;
-        }
+    
+    public String getSonido(){
+        return this.sonido;
     }
 
-    public boolean verificarCantidad(int cantidad) {
-        boolean aux = false;
+    public void agregarAnimales(int cantidad) {
         if (cantidad > 0) {
-            aux = true;
+            this.cantidad = this.cantidad + cantidad;
         } else {
-            System.out.println("Cantidad invalida");
+            System.out.println("Cantidad invalida de " + this.nombre);
         }
-        return aux;
     }
 
     public String hacerSonido() {
-        return "El animal : ";
+        return getSonido();
     }
-
-    @Override
-    public String toString() {
-        return "La cantidad del animal es " + this.cantidad;
-    }
-
 }
