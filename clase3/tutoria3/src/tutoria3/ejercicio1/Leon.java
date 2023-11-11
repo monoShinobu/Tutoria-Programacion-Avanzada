@@ -9,16 +9,20 @@ package tutoria3.ejercicio1;
  * @author puras
  */
 public class Leon extends Animal {
-    public String sonido = "Ruge";
-    public Leon(int codigo){
-        super(codigo, 0);
+   public Leon(int codigo){
+        super(codigo, 0, "Leon");
     }
     
     public void agregarCantidad(int cantidad){
-        agregarAnimales(cantidad);
+        super.agregarAnimales(cantidad);
     }
     
     public String sonido(){
-        return super.hacerSonido() + this.sonido;
+        return super.hacerSonido();
+    }
+    
+    @Override
+    public String toString() {
+        return "La cantidad de leones es " + this.cantidad;
     }
 }
