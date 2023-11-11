@@ -18,23 +18,29 @@ public class Main {
         Serpiente serpiente = new Serpiente(4);
 
         //agregamos las cantidades
-        leon.agregarCantidad(5);
+        leon.agregarCantidad(6);
         System.out.println(leon.toString());
         
         gorila.agregarCantidad(5);
         System.out.println(gorila.toString());
         
-        pato.agregarCantidad(5);
+        pato.agregarCantidad(3);
         System.out.println(pato.toString());
         
         serpiente.agregarCantidad(5);
         System.out.println(serpiente.toString());
 
+        
+        leon.setSonido("Ruge");
+        gorila.setSonido("Gruñe");
+        pato.setSonido("Grazna");
+        serpiente.setSonido("Sisea");
+        
         //mostramos el sonido de cada uno
-        System.out.println("Leon "+leon.sonido());
-        System.out.println("Gorila"+gorila.sonido());
-        System.out.println("Serpiente"+serpiente.sonido());
-        System.out.println("Pato"+pato.sonido());
+        System.out.println("Leon: "+leon.sonido());
+        System.out.println("Gorila: "+gorila.sonido());
+        System.out.println("Serpiente: "+serpiente.sonido());
+        System.out.println("Pato: "+pato.sonido());
 
     }
 
