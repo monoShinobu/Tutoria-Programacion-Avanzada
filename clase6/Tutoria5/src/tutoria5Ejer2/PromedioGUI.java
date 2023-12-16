@@ -17,7 +17,7 @@ public class PromedioGUI extends JFrame implements ActionListener {
     private JTextArea textAreaNotas;
 
     public PromedioGUI() {
-        super("Calculadora de Promedio");
+        setTitle("Calculadora de promedio");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         labelCantidad = new JLabel("Cantidad de notas:");
