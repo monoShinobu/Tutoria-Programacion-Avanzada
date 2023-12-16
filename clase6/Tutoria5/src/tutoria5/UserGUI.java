@@ -18,7 +18,7 @@ public class UserGUI extends JFrame implements ActionListener {
     private JTextArea userListArea;
 
     public UserGUI() {
-        // Set up user list
+        //Lista de usuarios
         userList = new ArrayList<User>();
 
         //frame
